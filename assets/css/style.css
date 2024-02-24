@@ -15,13 +15,17 @@
     margin: 0;
     padding: 0;
     outline: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
 
 body{
+    display: -ms-grid;
     display: grid;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-family: sans-serif;
     background-color: var(--color-bg);
     min-height: 100vh;
@@ -49,18 +53,28 @@ svg
     position: absolute;
     z-index: 2;
     top: 50%;
-    transform: translate(var(--_translateX, 0), -50%);
+    -webkit-transform: translate(var(--_translateX, 0), -50%);
+        -ms-transform: translate(var(--_translateX, 0), -50%);
+            transform: translate(var(--_translateX, 0), -50%);
     width: var(--_size);
     height: var(--_size);
     font-size: calc(var(--_size) / 3);
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border-radius: 10rem;
     color: var(--color-primary);
     background-color: var(--color-navigation-bg);
     border: 0;
     cursor: pointer;
+    -webkit-transition: background-color 0.05s var(--easing-function);
+    -o-transition: background-color 0.05s var(--easing-function);
     transition: background-color 0.05s var(--easing-function);
 }
 
@@ -96,9 +110,15 @@ svg
 }
 
 .tinyflow-slider__pagination{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 30px;
 }
 
@@ -112,6 +132,8 @@ svg
     border-radius: 10rem;
     opacity: 1;
     overflow: hidden;
+    -webkit-transition: background-color 0.05s var(--easing-function);
+    -o-transition: background-color 0.05s var(--easing-function);
     transition: background-color 0.05s var(--easing-function);
 }
 
@@ -138,6 +160,8 @@ svg
 }
 
 .tinyflow-slider__pagination__btn.swiper-pagination-bullet-active::after{
+    -webkit-transition: all var(--easing-function);
+    -o-transition: all var(--easing-function);
     transition: all var(--easing-function);
 }
 
@@ -149,6 +173,8 @@ svg
     background-color: var(--color-card);
     border-radius: 16px;
     overflow: hidden;
+    -webkit-transition: all 0.2s var(--easing-function);
+    -o-transition: all 0.2s var(--easing-function);
     transition: all 0.2s var(--easing-function);
     margin-left: auto;
     margin-right: auto;
@@ -162,11 +188,14 @@ svg
 
 .swiper-slide:not(.swiper-slide-active) .card{
     opacity: 0.4;
-    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
 }
 
 .swiper-slide.swiper-slide-active .card{
-    box-shadow: 0 0 var(--_shadow-spread) rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 0 var(--_shadow-spread) rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 var(--_shadow-spread) rgba(0, 0, 0, 0.05);
 }
 
 .card__bg{
@@ -175,8 +204,12 @@ svg
     width: 100%;
     height: 100%;
     color: var(--color-card);
-    user-select: none;
-    object-fit: cover;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 @media (max-width: 767.98px) {
