@@ -1,5 +1,5 @@
 const swiper = new Swiper(".tinyflow-slider", {
-    slidesPerView: 1,
+    slidesPerView: "auto",
     centeredSlides: true,
     slideToClickedSlide: true,
     lazy: true,
@@ -22,7 +22,10 @@ const swiper = new Swiper(".tinyflow-slider", {
         prevEl: '[data-slider-arrow="prev"]',
     },
     breakpoints: {
-        768: {
+        0: {
+            centeredSlides: false,
+        },
+        668: {
             slidesPerView: 2,
         },
         992: {

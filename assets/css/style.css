@@ -97,6 +97,16 @@ svg
     right: 0;
 }
 
+@media (max-width: 667.98px){
+    .tinyflow-slider__arrow--prev{
+        --_translateX: 0;
+    }
+    .tinyflow-slider__arrow--next{
+        --_translateX: 50%;
+        right: 20%;
+    }
+}
+
 .tinyflow-slider__arrow:active{
     background-color: var(--color-arrow-active-bg);
 }
@@ -110,16 +120,22 @@ svg
 }
 
 .tinyflow-slider__pagination{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    display: none;
     margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .tinyflow-slider__pagination{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
 }
 
 .tinyflow-slider__pagination__btn{
@@ -168,7 +184,6 @@ svg
 .card{
     position: relative;
     width: 100%;
-    max-width: 420px;
     min-height: 500px;
     background-color: var(--color-card);
     border-radius: 16px;
@@ -180,6 +195,7 @@ svg
     margin-right: auto;
 }
 
+
 @media (min-width: 992px) {
     .card{
         max-width: 370px;
@@ -188,9 +204,14 @@ svg
 
 .swiper-slide:not(.swiper-slide-active) .card{
     opacity: 0.4;
-    -webkit-transform: scale(0.9);
-        -ms-transform: scale(0.9);
-            transform: scale(0.9);
+}
+
+@media (min-width: 668px) {
+    .swiper-slide:not(.swiper-slide-active) .card{
+        -webkit-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+                transform: scale(0.9);
+    }
 }
 
 .swiper-slide.swiper-slide-active .card{
@@ -212,9 +233,13 @@ svg
        object-fit: cover;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 667.98px) {
     .swiper-slide{
         padding-left: 20px;
+        max-width: 80%;
+    }
+
+    .swiper-slide:last-of-type{
         padding-right: 20px;
     }
 }
